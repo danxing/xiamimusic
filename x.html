@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/mystyle.css" rel="stylesheet"/> 
+    <link href="font/iconfont.css" rel="stylesheet"/> 
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	            <!-- 主页面标题 -->
+	            <header class="mui-bar mui-bar-nav my-header">
+				<span class="mui-icon mui-icon mui-icon-mic zjnav-left"></span>	            	
+	                <div class="mui-input-row mui-search my-search">
+		    			<input type="search" class="mui-input-clear" placeholder="搜索音乐、歌词、电台">
+					</div>
+					<span class="mui-icon mui-icon iconfont icon-yinle zjnav-right"></span>
+	            </header>
+	            <nav class="mui-bar mui-bar-tab my-tab">
+	    		    <a class="mui-tab-item mui-active">
+	    		        <span class="mui-icon iconfont icon-wangyiyunyinlezizhi"></span>
+	    		        <span class="mui-tab-label">发现音乐</span>
+	    		    </a>
+	    		    <a class="mui-tab-item">
+	    		        <span class="mui-icon iconfont icon-iconupload"></span>
+	    		        <span class="mui-tab-label">我的音乐</span>
+	    		    </a>
+	    		    <a class="mui-tab-item">
+	    		        <span class="mui-icon iconfont icon-pengyou"></span>
+	    		        <span class="mui-tab-label">朋友</span>
+	    		    </a>
+	    		    <a class="mui-tab-item">
+	    		        <span class="mui-icon iconfont icon-zhanghao"></span>
+	    		        <span class="mui-tab-label">账号</span>
+	    		    </a>
+	    		</nav>
+	            <!-- 主页面内容容器 -->
+	            <div class="mui-content mui-scroll-wrapper">
+	            	<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted  my-slider">
+							<a id="aid" class="mui-control-item" href="#item1mobile">个性推荐</a>
+							<a id="a2id" class="mui-control-item" href="#item2mobile">歌单</a>
+							<a id="a3id" class="mui-control-item" href="#item3mobile">主播电台</a>
+							<a id="a4id" class="mui-control-item" href="#item4mobile">排行榜</a>
+					</div>
+				</div>
+				
+				
+	            	
+	       	 <div class="mui-off-canvas-backdrop"></div>
+	        </div>
+	    </div>
+	    <script>
+	    
+	   
+	mui.plusReady(function(){
+		     var detailPage = mui.preload({url:'Recommend.html',id:'Recommend.html'});
+			  mui('#sliderSegmentedControl').on('tap', 'a', function(e){
+			    mui.fire(detailPage,'newsId',{
+			    	id:this.getAttribute('id')});
+			        mui.openWindow({id:'Recommend.html'});
+			  });
+
+		   
+		});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>网易云音乐模拟app</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		<link href="css/mystyle.css" rel="stylesheet"/> 
+    	<link href="font/iconfont.css" rel="stylesheet"/> 
+		<style>
+			
+			.title{
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+	
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			.oa-contact-content {
+				width: 100%;
+			}
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			.oa-contact-name, oa-contact-position {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav my-header">
+				<span class="mui-icon mui-icon mui-icon-mic zjnav-left"></span>	            	
+	                <div class="mui-input-row mui-search my-search">
+		    			<input type="search" class="mui-input-clear" placeholder="搜索音乐、歌词、电台">
+					</div>
+					<span class="mui-icon mui-icon iconfont icon-yinle zjnav-right"></span>
+	            </header>
+		<nav class="mui-bar mui-bar-tab my-tab">
+			<a class="mui-tab-item mui-active" href="#tabbar">
+				<span class="mui-icon iconfont icon-wangyiyunyinlezizhi"></span>
+				<span class="mui-tab-label">发现音乐</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-chat">
+				<span class="mui-icon iconfont icon-iconupload"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">我的音乐</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-contact">
+				<span class="mui-icon iconfont icon-pengyou"></span>
+				<span class="mui-tab-label">朋友</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-map">
+				<span class="mui-icon iconfont icon-zhanghao"></span>
+				<span class="mui-tab-label">账号</span>
+			</a>
+		</nav>
+		
+		<!--以下是身体部分-->
+		<div class="mui-content my-content">
+			<div id="tabbar" class="mui-control-content mui-active">
+				<style>
+			.mui-control-content {
+				background-color: white;
+				min-height: 215px;
+			}
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+		</style>
+		<!--第一页的内容-->
+		<div class="mui-content">
+				<div id="slider" class="mui-slider" style="margin-top: 44px;">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative  my-slider">
+					<a class="mui-control-item" href="#item1mobile">个性推荐</a>
+					<a class="mui-control-item" href="#item2mobile">歌单</a>
+					<a class="mui-control-item" href="#item3mobile">主播电台</a>
+					<a class="mui-control-item" href="#item4mobile">排行榜</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+				<div class="mui-slider-group">
+					
+					
+					<!--发现音乐第一页-->
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="slider" class="mui-slider slider_box" >
+						  <div class="mui-slider-group mui-slider-loop">
+						    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+						    <div class="mui-slider-item mui-slider-item-duplicate">
+						      <a href="#">
+						        <img src="img/4.jpg">
+						      </a>
+						    </div>
+						    <!-- 第一张 -->
+						    <div class="mui-slider-item">
+						      <a href="#">
+						        <img src="img/1.jpg">
+						      </a>
+						    </div>
+						    <!-- 第二张 -->
+						    <div class="mui-slider-item">
+						      <a href="#">
+						        <img src="img/2.jpg">
+						      </a>
+						    </div>
+						    <!-- 第三张 -->
+						    <div class="mui-slider-item">
+						      <a href="#">
+						        <img src="img/3.jpg">
+						      </a>
+						    </div>
+						    <!-- 第四张 -->
+						    <div class="mui-slider-item">
+						      <a href="#">
+						        <img src="img/4.jpg">
+						      </a>
+						    </div>
+						    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+						    <div class="mui-slider-item mui-slider-item-duplicate">
+						      <a href="#">
+						        <img src="img/1.jpg">
+						      </a>
+						    </div>
+						  </div>
+						  <div class="mui-slider-indicator">
+						    <div class="mui-indicator mui-active"></div>
+						    <div class="mui-indicator"></div>
+						    <div class="mui-indicator"></div>
+						    <div class="mui-indicator"></div>
+						  </div>
+						</div>
+						<!--栅格-->
+						<ul class="mui-table-view mui-grid-view mui-grid-9 my-grid">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+						    <a href="#">
+						        <span class="mui-icon iconfont icon-Shape"></span>
+						        <div class="mui-media-body">私人FM</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+						    <a href="#">
+						        <span class="mui-icon iconfont icon-24"></span>
+						        <div class="mui-media-body">每日歌曲</div>
+						    </a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+						    <a href="#">
+						        <span class="mui-icon iconfont icon-paixingbang"></span>
+						        <div class="mui-media-body">云音乐热歌榜</div>
+						    </a>
+						</li>
+						    </ul>
+						<!--图标栅格结束-->
+						<!--图文部分-->
+						<div class="view-box">
+							<div class="view-title">
+								<div class="left_box">
+									<i class="mui-icon mui-icon-settings"></i>推荐歌单
+								</div>
+								<div class="right_box">
+									<a href="#">更多></a>
+								</div>
+							</div>
+							<ul class="mui-table-view mui-grid-view">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/it6.jpg">
+							            <div class="mui-media-body">【华语】愿我们 不负这 美好时光</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/it2.jpg">
+							            <div class="mui-media-body">「故事和酒」醉醒交错2</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/12.jpg">
+							            <div class="mui-media-body">孤独的时候别听民谣</div>
+							        </a>
+							    </li>
+							</ul>
+							<ul class="mui-table-view mui-grid-view">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/it5.png">
+							            <div class="mui-media-body">韩语系列</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/15.jpg">
+							            <div class="mui-media-body">永远的哥哥 永远的..</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/it1.jpg">
+							            <div class="mui-media-body">剧毒|SAM第三次收录...</div>
+							        </a>
+							    </li>
+							</ul>
+						</div>
+						<!--以上图文一-->
+						
+						<div class="view-box">
+							<div class="view-title">
+								<div class="left_box">
+									<i class="mui-icon iconfont icon-wangyiyunyinlezizhi"></i>独家放送
+								</div>
+								<div class="right_box">
+									<a href="#">更多></a>
+								</div>
+							</div>
+							<ul class="mui-table-view mui-grid-view">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/it01.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/it02.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/it03.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							</ul>
+							<ul class="mui-table-view mui-grid-view">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/it04.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/it8.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/it9.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							</ul>
+						</div>
+						
+						<!--以上图文二-->
+						<div class="view-box">
+							<div class="view-title">
+								<div class="left_box">
+									<i class="mui-icon iconfont icon-yinle1"></i>最新音乐
+								</div>
+								<div class="right_box">
+									<a href="#">更多></a>
+								</div>
+							</div>
+							<ul class="mui-table-view mui-grid-view">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object"  src="img/it7.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object"  src="img/it10.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object"  src="img/it6.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							</ul>
+							<ul class="mui-table-view mui-grid-view">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object"  src="img/it8.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object"  src="img/it2.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-4">
+							        <a href="#">
+							            <img class="mui-media-object" s src="img/it01.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							</ul>
+						</div>
+						<!--以上图文三-->
+						<div class="view-box">
+							<div class="view-title">
+								<div class="left_box">
+									<i class="mui-icon mui-icon-settings"></i>推荐MV
+								</div>
+								<div class="right_box">
+									<a href="#">更多></a>
+								</div>
+							</div>
+							<ul class="mui-table-view mui-grid-view">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6 ">
+							        <a href="#">
+							            <img class="mui-media-object"  src="img/it9.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/11.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							</ul>
+							<ul class="mui-table-view mui-grid-view">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/13.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/14.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							   
+							</ul>
+						</div>
+						<!--以上图文四-->
+						<!--图文部分结束-->
+					</div>
+	
+					<!--以下是发现音乐第二页-->
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="item2mobile_header">
+							<div class="left">
+								<div class="left_border">
+									<p>全部歌单</p>
+								</div>
+							</div>
+							<div class="right">
+								<div class="text-box">
+									<i class="mui-icon mui-icon-navigate"></i>
+									选择分类
+								</div>
+							</div>
+						</div>
+						<ul class="mui-table-view my-table_box">
+						    <li class="mui-table-view-cell mui-media">
+						        <a href="javascript:;">
+						            <img class="mui-media-object mui-pull-left" src="img/2it1.jpg">
+						            <div class="mui-media-body">
+						                <i class="iconfont icon-yinle1"></i>精品歌单
+						                <p class='mui-ellipsis'>复古合成器°少年心底</p>
+						               
+						            </div>
+						            <div class="jaintou"> <i class="iconfont icon-xiangyoujiantou"></i></div>
+						        </a>
+						    </li>
+						</ul>
+						<ul class="my-grid-bg mui-table-view mui-grid-view ">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/13.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/14.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							   
+						</ul>
+						<ul class="my-grid-bg mui-table-view mui-grid-view ">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/13.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/14.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							   
+						</ul>
+						<ul class="my-grid-bg mui-table-view mui-grid-view ">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/13.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/14.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							   
+						</ul>
+						<ul class="my-grid-bg mui-table-view mui-grid-view ">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/13.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/14.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							   
+						</ul>
+						<ul class="my-grid-bg mui-table-view mui-grid-view ">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/13.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/14.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							   
+						</ul>
+						<ul class="my-grid-bg mui-table-view mui-grid-view ">
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/13.jpg">
+							            <div class="mui-media-body">文字说明1</div>
+							        </a>
+							    </li>
+							    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+							        <a href="#">
+							            <img class="mui-media-object" src="img/14.jpg">
+							            <div class="mui-media-body">文字说明2</div>
+							        </a>
+							    </li>
+							   
+						</ul>
+					</div>
+
+
+
+
+
+
+
+
+
+					
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						
+						<div id="Gallery" class="mui-slider">
+							<div class="mui-slider-group">
+								<div class="mui-slider-item">
+									<ul class="mui-table-view mui-grid-view mui-grid-9">
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-home"></span>
+												<div class="mui-media-body">Home</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
+												<div class="mui-media-body">Email</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-chatbubble"></span>
+												<div class="mui-media-body">Chat</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-location"></span>
+												<div class="mui-media-body">location</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-search"></span>
+												<div class="mui-media-body">Search</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-phone"></span>
+												<div class="mui-media-body">Phone</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-gear"></span>
+												<div class="mui-media-body">Setting</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-info"></span>
+												<div class="mui-media-body">about</div>
+											</a>
+										</li>
+										
+									</ul>
+								</div>
+								<div class="mui-slider-item">
+									<ul class="mui-table-view mui-grid-view mui-grid-9">
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-home"></span>
+												<div class="mui-media-body">Home</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
+												<div class="mui-media-body">Email</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-chatbubble"></span>
+												<div class="mui-media-body">Chat</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-location"></span>
+												<div class="mui-media-body">location</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-search"></span>
+												<div class="mui-media-body">Search</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-phone"></span>
+												<div class="mui-media-body">Phone</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-gear"></span>
+												<div class="mui-media-body">Setting</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-info"></span>
+												<div class="mui-media-body">about</div>
+											</a>
+										</li>
+										
+									</ul>
+								</div>
+								<div class="mui-slider-item">
+									<ul class="mui-table-view mui-grid-view mui-grid-9">
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-home"></span>
+												<div class="mui-media-body">Home</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
+												<div class="mui-media-body">Email</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-chatbubble"></span>
+												<div class="mui-media-body">Chat</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-location"></span>
+												<div class="mui-media-body">location</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-search"></span>
+												<div class="mui-media-body">Search</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-phone"></span>
+												<div class="mui-media-body">Phone</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-gear"></span>
+												<div class="mui-media-body">Setting</div>
+											</a>
+										</li>
+										<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+											<a href="#">
+												<span class="mui-icon mui-icon-info"></span>
+												<div class="mui-media-body">about</div>
+											</a>
+										</li>
+										
+									</ul>
+								</div>
+			
+							</div>
+							<div class="mui-slider-indicator">
+								<div class="mui-indicator mui-active"></div>
+								<div class="mui-indicator"></div>
+								<div class="mui-indicator"></div>
+							</div>
+						</div>
+
+					</div>
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll3" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-loading">
+									<div class="mui-spinner">
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack: false
+			});
+			
+			var gallery = mui('.slider_box');
+			gallery.slider({
+			  interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+			});
+			
+			
+			(function($) {
+				$('.mui-scroll-wrapper').scroll({
+					indicators: true //是否显示滚动条
+				});
+				var html2 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第二个选项卡子项-1</li><li class="mui-table-view-cell">第二个选项卡子项-2</li><li class="mui-table-view-cell">第二个选项卡子项-3</li><li class="mui-table-view-cell">第二个选项卡子项-4</li><li class="mui-table-view-cell">第二个选项卡子项-5</li></ul>';
+				var html3 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第三个选项卡子项-1</li><li class="mui-table-view-cell">第三个选项卡子项-2</li><li class="mui-table-view-cell">第三个选项卡子项-3</li><li class="mui-table-view-cell">第三个选项卡子项-4</li><li class="mui-table-view-cell">第三个选项卡子项-5</li></ul>';
+				var item2 = document.getElementById('item2mobile');
+				var item3 = document.getElementById('item3mobile');
+				var html4='<ul class="mui-table-view"><li class="mui-table-view-cell">第三个选项卡子项-1</li><li class="mui-table-view-cell">第三个选项卡子项-2</li><li class="mui-table-view-cell">第三个选项卡子项-3</li><li class="mui-table-view-cell">第三个选项卡子项-4</li><li class="mui-table-view-cell">第三个选项卡子项-5</li></ul>';
+				var item4=document.getElementById('item4mobile');
+				document.getElementById('slider').addEventListener('slide', function(e) {
+					if (e.detail.slideNumber === 1) {
+						if (item2.querySelector('.mui-loading')) {
+							setTimeout(function() {
+								item2.querySelector('.mui-scroll').innerHTML = html2;
+							}, 500);
+						}
+					} else if (e.detail.slideNumber === 2) {
+						if (item3.querySelector('.mui-loading')) {
+							setTimeout(function() {
+								item3.querySelector('.mui-scroll').innerHTML = html3;
+							}, 500);
+						}
+					} else if (e.detail.slideNumber === 3) {
+						if (item4.querySelector('.mui-loading')) {
+							setTimeout(function() {
+								item4.querySelector('.mui-scroll').innerHTML = html4;
+							}, 500);
+						}
+					}
+					
+				});
+				var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
+				$('.mui-input-group').on('change', 'input', function() {
+					if (this.checked) {
+						sliderSegmentedControl.className = 'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
+						//force repaint
+						sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
+					}
+				});
+			})(mui);
+		</script>
+				
+			</div>
+			
+			<!--我的音乐页面-->
+			<div id="tabbar-with-chat" class="mui-control-content" style="margin-top: 44px;">
+				<ul class="mui-table-view">
+					
+				    <li class="mui-table-view-cell my-music">
+				    	<div class="left_btn">
+						<i></i>
+						</div>
+						<div class="right_btn">
+							
+				    	下载音乐
+				    	<div class="num">
+				    		18
+				    		<i></i>
+				    	</div>
+						</div>
+				    	
+				    </li>
+				    <li class="mui-table-view-cell my-music">
+				    	<div class="left_btn">
+						<i></i>
+						</div>
+						<div class="right_btn">
+							
+				    	下载音乐
+				    	<div class="num">
+				    		18
+				    		<i></i>
+				    	</div>
+						</div>
+				    	
+				    </li>
+				    <li class="mui-table-view-cell my-music">
+				    	<div class="left_btn">
+						<i></i>
+						</div>
+						<div class="right_btn">
+							
+				    	下载音乐
+				    	<div class="num">
+				    		18
+				    		<i></i>
+				    	</div>
+						</div>
+				    	
+				    </li>
+				</ul>
+								
+			</div>
+			
+			<!--朋友页面-->
+			<div id="tabbar-with-contact" class="mui-control-content">
+				
+				
+			</div>
+			
+			<!--账号页面-->
+			<div id="tabbar-with-map" class="mui-control-content">
+				<div class="title">这是div模式选项卡中的第4个子页面，该页面展示一个常见的设置示例.</div>
+				<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						新消息通知
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						隐私
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						通用
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 25px;">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						关于mui
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 25px;">
+				<li class="mui-table-view-cell">
+					<a style="text-align: center;color: #FF3B30;">
+						退出登录
+					</a>
+				</li>
+			</ul>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		mui.plusReady(function(){
+    			window.addEventListener('newsId',function(event){
+        		console.log("111");
+    });});
+	</script>
+</html>

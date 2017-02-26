@@ -1,0 +1,214 @@
+body{
+	background: #FBFCFD;
+}
+.my-header{
+	background: #D43C33;
+	position: relative;
+	position: fixed;
+    top: 0;
+    left: 0;
+}
+.my-search{
+	width: 75%;
+	margin: auto;
+}
+.my-search input{
+	background: #FFFFFF;
+	font-size: 14px;
+}	
+ .my-header .zjnav-left{
+	position: absolute;
+	left: 10px;
+	color: #ffffff;
+}
+ .my-header .zjnav-right{
+	position: absolute;
+	right: 10px;
+	top: 0;
+	color: #ffffff;
+}
+.my-slider{
+	background: #ffffff;
+}
+.my-slider a{
+	font-size: 14px;
+}
+.my-slider.mui-segmented-control-inverted .mui-control-item.mui-active {
+    color: #D43C33;
+    border-bottom: 2px solid #D43C33;
+    background: 0 0;
+}
+.my-tab{
+	background: #131414;
+}
+.my-tab  .mui-tab-item{
+	color: #A2A2A1;
+}
+.my-tab  .mui-tab-item.mui-active {
+    color: #FBFBFB;
+}
+
+
+.my-tab .mui-tab-item .mui-icon~.mui-tab-label{
+	font-size: 10px;
+}
+.mui-bar-nav~.my-content {
+     padding-top: 0px; 
+}
+.mui-bar-nav~.mui-content {
+     padding-top: 0px; 
+}
+.mui-control-content {
+    background-color: white;
+    min-height: none;
+}
+/*以下是栅格部分*/
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+    font-size: 10px;
+}
+.mui-grid-view.mui-grid-9 .mui-media .mui-icon {
+    color: #D43C33;
+}
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+    border-right: 0px solid #eee; 
+}
+.mui-grid-view.mui-grid-9 {
+    background-color:#FBFCFC;
+}
+/*图文部分*/
+.mui-table-view.mui-grid-view {
+    padding: 0 10px 10px 0px;
+}
+.view-title{
+	height: 38px;
+	background-color: #FBFCFD;
+}
+.left_box{
+	height: 100%;
+	float: left;
+	padding-left: 14px;
+	line-height: 58px;
+}
+.left_box i{
+	font-size: 13px;
+	padding: 5px 5px 5px 0;
+	color:#D43C33;;
+}
+.right_box{
+	height: 100%;
+	float: right;
+	padding-right:19px;
+	line-height:58px;
+}
+.right_box a{
+	font-size: 12px;
+	color: #7C7C7C;
+}
+/*图文部分的标题部分结束*/
+.view-box{
+	background: #FBFCFD;
+}
+/*第一页最后*/
+/*发现音乐第二页内容*/
+.item2mobile_header{
+	height: 38px;
+	margin: 0 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	line-height: 38px;
+}
+.item2mobile_header .left{
+	/*padding-left: 14px;*/
+}
+.item2mobile_header .right{
+	/*padding-right: 14px;*/
+}
+.text-box{
+	font-size: 10px;
+	border-radius: 2px;
+	color: #323232;
+	width:65px;
+	height: 24px;
+	line-height: 24px;
+	text-align: right;
+	margin-top: 7px;
+	border: 1px solid #CCCCCC;
+}
+.text-box i{
+	font-size: 5px;
+}
+.mui-control-content {
+    background-color: #FBFCFD; 
+    min-height: none;
+}
+.left_border p{
+	padding: 0 10px;
+	color: #000000;
+	font-weight: 600;
+	line-height: 20px;;
+	height: 20px;
+	margin-top:9px ;
+	border-left:2px solid #D33A31;
+}
+
+.mui-table-view .mui-media-object {
+    line-height: 64px;
+    max-width: 64px;
+    height: 64px;
+}
+
+.mui-media-body{
+	position: relative;
+	width: 230px;
+	margin-top: 11px;
+	font-size: 15px;
+	font-weight: 600;
+}
+.mui-media-body i{
+	color: #EBB774;
+	padding: 5px 5px 5px 0;
+}
+.mui-media-body p{
+	font-size: 12px;
+	color: #C0C0C0;
+	font-weight: 500;
+}
+.jaintou{
+	position: absolute;
+	right:15px;
+	top: 32px;
+}
+.jaintou i{
+	color: #C0C0C0;
+}
+#item2mobile{
+	background: none;
+}
+.my-table_box{
+	margin:0 10px;
+}
+/*图文部分*/
+.my-grid-bg{
+	background-color: #EFEFF4;
+}
+
+/*第三页*/
+/*.my-music div{
+	float: right;
+}
+*/
+.my-music .left_btn{
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+.my-music .right_btn{
+	width: 80%;
+	height: 100%;
+	float: right;
+}
+.my-music .right_btn .num{
+	float: right;
+}
